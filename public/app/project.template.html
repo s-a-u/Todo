@@ -1,0 +1,34 @@
+<div id="project-{{$ctrl.project.id}}" class="panel panel-primary project">
+  <div class="panel-heading controls">
+    <span ng-hide="$ctrl.showForm">{{$ctrl.project.name}}</span>
+
+    <form ng-show="$ctrl.showForm" name="form" ng-submit="form.$valid && $ctrl.submit()">
+      <label for="project-{{$ctrl.project.id}}-name" class="sr-only">Name</label>
+
+      <div class="input-group input-group-sm">
+        <input id="project-{{$ctrl.project.id}}-name" type="text" class="form-control" ng-model="$ctrl.projectCopy.name" required>
+        <span class="input-group-btn">
+          <button class="btn btn-primary btn-sm">Save</button>
+          <button type="button" class="btn btn-default btn-sm" ng-click="$ctrl.showForm=false">Cancel</button>
+        </span>
+      </div>
+
+    </form>
+
+    <div class="pull-right" ng-hide="$ctrl.showForm">
+      <i class="fa fa-pencil edit" ng-click="$ctrl.showUpdateForm()" title="Edit"></i> |
+      <i class="fa fa-trash-o delete" ng-click="$ctrl.delete()" title="Delete"></i>
+    </div>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item new-task">
+      <new-task on-create="$ctrl.onTaskCreate(task)" project="$ctrl.project"></new-task>
+    </li>
+  </ul>
+  <ul class="list-group" ui-sortable="$ctrl.sortableOptions" ng-model="$ctrl.project.tasks">
+    <li class="list-group-item task" ng-repeat="task in $ctrl.project.tasks">
+      <task on-delete="$ctrl.onTaskDelete(task)" task="task" ></task>
+    </li>
+  </ul>
+
+</div>

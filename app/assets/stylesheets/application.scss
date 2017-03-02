@@ -1,0 +1,35 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "jquery-ui";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+
+.done{
+  text-decoration: line-through;
+}
+
+.project{
+  .controls{
+    font-size: 20px;
+    .fa{
+      padding: 0 5px;
+      cursor: pointer;
+    }
+  }
+}
+
+.new-task{
+  .fa{
+    font-size: 24px;
+    padding: 4px;
+    margin-left: -10px;
+  }
+}
+
+.task{
+  .fa{
+    padding: 0 5px;
+    cursor: pointer;
+  }
+}

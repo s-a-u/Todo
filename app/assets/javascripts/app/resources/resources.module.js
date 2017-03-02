@@ -1,0 +1,2 @@
+angular.module('resources', ['ngResource']);
+

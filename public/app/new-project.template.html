@@ -1,0 +1,15 @@
+<div>
+  <button class="btn btn-primary" ng-click="newProject = true" ng-hide="newProject">Add TODO List</button>
+
+  <form name="f" class="form-inline" ng-submit="f.$valid && $ctrl.submit()" ng-show="newProject">
+    <label for="new-project-name" class="sr-only">New Project Name</label>
+    <div class="input-group">
+      <input id="new-project-name" type="text" class="form-control" ng-model="$ctrl.project.name" required>
+      <span class="input-group-btn">
+        <button class="btn btn-primary">Add</button>
+        <button type="button" class="btn btn-default" ng-click="newProject = false">Cancel</button>
+      </span>
+    </div>
+  </form>
+
+</div>

@@ -1,0 +1,10 @@
+<span class="fa fa-plus pull-left text-success" aria-hidden="true"></span>
+<form name="form" ng-submit="form.$valid && $ctrl.submit()">
+  <label for="project-{{$ctrl.project.id}}-new-task" class="sr-only">New task description</label>
+  <div class="input-group input-group-sm">
+    <input id="project-{{$ctrl.project.id}}-new-task" type="text" class="form-control" ng-model="$ctrl.task.description" required>
+      <span class="input-group-btn">
+        <button class="btn btn-success">Add Task</button>
+      </span>
+  </div>
+</form>

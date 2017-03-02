@@ -1,0 +1,24 @@
+<div id="task-{{$ctrl.task.id}}" ng-class="{done: $ctrl.task.done}">
+  <form name="form" ng-show="$ctrl.showForm" ng-submit="form.$valid && $ctrl.submit()">
+    <label for="task-{{$ctrl.task.id}}-description" class="sr-only">Description</label>
+    <div class="input-group input-group-sm">
+      <input id="task-{{$ctrl.task.id}}-description" type="text" class="form-control input-sm" ng-model="$ctrl.taskCopy.description" required>
+      <span class="input-group-btn">
+        <button class="btn btn-primary btn-xs">Save</button>
+        <button type="button" class="btn btn-default btn-xs" ng-click="$ctrl.showForm = false">Cancel</button>
+      </span>
+    </div>
+  </form>
+
+  <div ng-hide="$ctrl.showForm">
+    <label for="task-{{$ctrl.task.id}}-done" class="sr-only">Done</label>
+    <input id="task-{{$ctrl.task.id}}-done" type="checkbox" ng-model="$ctrl.task.done" ng-click="$ctrl.update()" title="Done"/>
+    <span>{{$ctrl.task.description}}</span>
+
+    <div class="pull-right">
+      <i class="fa fa-sort handle" aria-hidden="true" title="Sort"></i> |
+      <i id="edit-task-{{$ctrl.task.id}}" class="fa fa-pencil edit" ng-click="$ctrl.edit()" title="Edit" aria-hidden="true"></i> |
+      <i id="delete-task-{{$ctrl.task.id}}" class="fa fa-trash-o delete" ng-click="$ctrl.delete()"></i>
+    </div>
+  </div>
+</div>
